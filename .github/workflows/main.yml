@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: latest
+          run_install: true
+
+      - run: pnpm run lint src/ --ext .tsx
+
+      - run: pnpm run prettier-check --config .prettierrc 'src/**/*.tsx' --write
+
+      - run: pnpm run build
