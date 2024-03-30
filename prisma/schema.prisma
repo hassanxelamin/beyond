@@ -21,15 +21,15 @@ model File {
   content   Bytes
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  Book      Book     @relation(fields: [bookId], references: [id])
-  bookId    Int
+  Book      Book?
 }
 
 model Book {
   id        Int      @id @default(autoincrement())
   title     String
   author    String
-  Files     File[]
+  fileId    Int      @unique
+  File      File     @relation(fields: [fileId], references: [id])
   Chapters  Chapter[]
 }
 
