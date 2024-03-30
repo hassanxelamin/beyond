@@ -44,7 +44,7 @@ export default function Page({ handleFileUpload }: FileUploadsProps) {
   return (
     <form onSubmit={handleFormSubmit}>
       <input type="file" onChange={(e) => setFile(e.target.files?.[0])} />
-      <button type="submit">Upload Test</button>
+      <button type="submit">Upload Test Agin</button>
     </form>
   );
 }
