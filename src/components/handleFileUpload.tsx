@@ -1,7 +1,6 @@
 'use server';
 
 import prisma from '@/lib/prisma';
-import { revalidatePath } from 'next/cache';
 
 interface SerializedFile {
   name: string;
@@ -12,7 +11,6 @@ interface SerializedFile {
 
 export async function handleFileUpload(serializedFile: SerializedFile) {
   try {
-    console.log('trying to upload file');
     // Fetch the content of the file from the URL
     const response = await fetch(serializedFile.url);
     if (!response.ok) {

@@ -26,12 +26,7 @@ export default function Page({ handleFileUpload }: FileUploadsProps) {
     try {
       const res = await edgestore.publicFiles.upload({
         file,
-        onProgressChange: (progress) => {
-          console.log(progress);
-        },
       });
-
-      const bookId = 1; // Replace with the actual book ID
 
       const serializedFile = {
         name: file.name,
@@ -40,7 +35,7 @@ export default function Page({ handleFileUpload }: FileUploadsProps) {
         url: res.url,
       };
 
-      const fileData = await handleFileUpload(serializedFile);
+      await handleFileUpload(serializedFile);
     } catch (error) {
       console.error('Error in form submission:', error);
     }

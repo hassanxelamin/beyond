@@ -1,11 +1,9 @@
 'use client';
 
+import React from 'react';
+
 import { EdgeStoreProvider } from '@/lib/edgestore';
 
-export const AppProviders = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <>
-      <EdgeStoreProvider>{children}</EdgeStoreProvider>
-    </>
-  );
-};
+export function AppProviders({ children }: { children: React.ReactNode }) {
+  return <EdgeStoreProvider>{children}</EdgeStoreProvider>;
+}
