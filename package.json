@@ -10,7 +10,8 @@
     "lint:fix": "eslint './src/**/*.{ts,tsx}' --ext .tsx --fix",
     "prettier-check": "prettier --check './src/**/*.{ts,tsx}'",
     "prettier-format": "prettier --config .prettierrc './src/**/*.{ts,tsx}' --write",
-    "prepare": "husky"
+    "prepare": "husky",
+    "gg-scan": "ggshield secret scan pre-commit"
   },
   "dependencies": {
     "@edgestore/react": "^0.1.6",
