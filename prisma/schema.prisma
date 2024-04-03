@@ -18,7 +18,7 @@ model File {
   name      String
   format    String
   size      Int
-  content   Bytes
+  contentUrl   String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   Book      Book?
