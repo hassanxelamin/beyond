@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 /*
  * Import Statements for the EpubView Component
  */
@@ -169,6 +168,7 @@ export class EpubView extends Component<IEpubViewProps, IEpubViewState> {
         const rendition = this.book.renderTo(node, {
           width: '100%',
           height: '100%',
+          flow: 'scrolled-doc',
           ...epubOptions, // Spread any additional epub options passed via props.
         });
         this.rendition = rendition; // Store the rendition instance for later use.
